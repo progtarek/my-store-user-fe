@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { createBrowserHistory } from 'history';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import configureStore from './store';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import Home from './layouts/Home/Home';
+
+const history = createBrowserHistory();
+const store = configureStore({ language: 'en' });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <Router history={history}>
+        <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Redirect to='/' />
+        </Switch>
+      </Router>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
