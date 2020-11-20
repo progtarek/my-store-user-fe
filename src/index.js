@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserHistory } from 'history';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import configureStore from './store';
-import { Router, Switch, Route, Redirect } from 'react-router-dom';
-import Home from './layouts/Home/Home';
+import { Router } from 'react-router-dom';
+import './index.css';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
+import App from './App';
 
 const history = createBrowserHistory();
-const store = configureStore({ language: 'en' });
+const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <Router history={history}>
-        <Switch>
-          <Route exact path='/' component={Home}></Route>
-          <Redirect to='/' />
-        </Switch>
+        <I18nextProvider i18n={i18n}>
+          <Suspense fallback='...loading'>
+            <App />
+          </Suspense>
+        </I18nextProvider>
       </Router>
-    </React.StrictMode>
-  </Provider>,
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
