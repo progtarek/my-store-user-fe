@@ -5,5 +5,11 @@
       "RETURNS": "Free & Easy Returns",
       "OFFERS": "Best Offers"
     }
+  },
+  "SHIP_TO": "Ship to",
+  "COUNTRY": {
+    "EG": "Egypt",
+    "KSA": "Saudi Arabia",
+    "UAE": "United Arab Emirates"
   }
 }

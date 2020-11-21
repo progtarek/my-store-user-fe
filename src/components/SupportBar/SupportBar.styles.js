@@ -34,7 +34,7 @@ export const UspsIcon = styled.span`
 `;
 
 export const UspsText = styled.span`
-  font-weight: bold;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 0.05em;
