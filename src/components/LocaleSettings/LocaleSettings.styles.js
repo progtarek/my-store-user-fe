@@ -43,6 +43,19 @@ const mapCountryIcon = (country) => {
   }
 };
 
+const mapSwitcherCountryAlignment = (language) => {
+  switch (language) {
+    case 'en':
+      return css`
+        left: -15px;
+      `;
+    default:
+      return css`
+        right: -15px;
+      `;
+  }
+};
+
 export const CountrySwitcherContainer = styled.div`
   position: relative;
   user-select: none;
@@ -87,15 +100,22 @@ export const CountrySwitcherContainer = styled.div`
     border-radius: 2px;
     position: absolute;
     top: 30px;
-    left: -15px;
     z-index: 1003;
     padding: 8px 0px;
     white-space: nowrap;
+    ${({ language }) => mapSwitcherCountryAlignment(language)}
 
     &::after {
       content: '';
       bottom: 100%;
-      left: ${(props) => (props.language === 'en' ? '35px' : '141px')};
+      ${(props) =>
+        props.language === 'en'
+          ? css`
+              left: 35px;
+            `
+          : css`
+              right: 35px;
+            `};
       border: 7px solid transparent;
       border-bottom-color: #fff;
       height: 0;
