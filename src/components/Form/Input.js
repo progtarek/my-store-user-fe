@@ -1,8 +1,24 @@
 import React from 'react';
-import { InputContainer } from './Form.styles';
+import { FormGroup, FormLabel, Field, ErrorMessage } from './Form.styles';
+import { useField } from 'formik';
 
-function Input() {
-  return <InputContainer></InputContainer>;
-}
+const FormInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+  return (
+    <FormGroup>
+      {label ? (
+        <FormLabel htmlFor={props.id || props.name}>{label}</FormLabel>
+      ) : null}
+      <Field
+        {...field}
+        {...props}
+        className={meta.touched && meta.error ? 'invalid' : ''}
+      />
+      {meta.touched && meta.error ? (
+        <ErrorMessage>{meta.error}</ErrorMessage>
+      ) : null}
+    </FormGroup>
+  );
+};
 
-export default Input;
+export default FormInput;
