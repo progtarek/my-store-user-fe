@@ -66,3 +66,40 @@ export const SearchTriggerContainer = styled.div`
     width: auto;
   }
 `;
+
+export const TxtHeaderEle = styled.p`
+  color: rgb(126, 133, 155);
+  margin: 0 0 3px 0;
+  font-size: 12px;
+`;
+
+export const SignInContainer = styled.div`
+  border-bottom: 1px solid rgb(226, 229, 241);
+  padding: 8px 0px 20px;
+  margin: 0px 25px 14px;
+
+  button {
+    box-sizing: border-box;
+    border-radius: 0;
+    outline: none;
+    background-color: rgb(56, 102, 223);
+    color: rgb(255, 255, 255);
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    margin-top: 8px;
+    padding: 9px 50px;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    transition: 0.3s all;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+`;
+
+export const SignUpContainer = styled.div``;

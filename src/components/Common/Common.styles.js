@@ -40,13 +40,13 @@ export const DropdownBodyContainer = styled.div`
   box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 4px 0px;
   position: absolute;
   z-index: 1003;
-  top: 62px;
   text-align: center;
   border-radius: 2px;
   padding: 8px 0px;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
+  top: 36px;
+  transform: translate(-50%, 0%);
   min-width: 200px;
 
   &::after {
@@ -55,10 +55,10 @@ export const DropdownBodyContainer = styled.div`
     ${({ language }) =>
       language === 'ar'
         ? css`
-            left: 15px;
+            left: 12%;
           `
         : css`
-            right: 35px;
+            right: 17%;
           `};
     border: 7px solid transparent;
     border-bottom-color: #fff;
