@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { PRIMARY } from '../../assets/css/variables';
 import { ContainerFluid } from '../../assets/css/common';
 
@@ -73,7 +73,7 @@ export const TxtHeaderEle = styled.p`
   font-size: 12px;
 `;
 
-export const SignInContainer = styled.div`
+export const SignInUpContainer = styled.div`
   border-bottom: 1px solid rgb(226, 229, 241);
   padding: 8px 0px 20px;
   margin: 0px 25px 14px;
@@ -102,4 +102,46 @@ export const SignInContainer = styled.div`
   }
 `;
 
-export const SignUpContainer = styled.div``;
+export const CartContainer = styled.a`
+  display: flex;
+  align-items: center;
+  transition: opacity ease-in-out 0.2s;
+  cursor: pointer;
+
+  ${({ language }) =>
+    language === 'ar'
+      ? css`
+          border-right: 1px solid rgba(64, 69, 83, 0.2);
+          margin-right: 15px;
+          padding-right: 15px;
+        `
+      : css`
+          border-left: 1px solid rgba(64, 69, 83, 0.2);
+          margin-left: 15px;
+          padding-left: 15px;
+        `};
+
+  span.title {
+    font-size: 13px;
+    font-weight: ${({ language }) => (language === 'en' ? '600' : 'bold')};
+    ${({ language }) =>
+      language === 'en'
+        ? css`
+            margin-right: 8px;
+          `
+        : css`
+            margin-left: 8px;
+          `};
+  }
+`;
+
+export const CartIconContainer = styled.div`
+  width: 27px;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+  }
+`;
