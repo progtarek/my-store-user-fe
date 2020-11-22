@@ -12,5 +12,6 @@
     "KSA": "Saudi Arabia",
     "UAE": "United Arab Emirates"
   },
-  "SEARCH_BAR": "What are you looking for?"
+  "SEARCH_BAR": "What are you looking for?",
+  "USER_SIGN_IN_OR_UP": "Sign In or Sign Up"
 }

@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { PRIMARY } from '../../assets/css/variables';
+import { ContainerFluid } from '../../assets/css/common';
 
 export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   background-color: ${PRIMARY};
   height: 65px;
+
+  ${ContainerFluid} {
+    align-items: center;
+  }
 `;
 
 export const LogoContainer = styled.div`

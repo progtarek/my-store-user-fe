@@ -1,13 +1,21 @@
 import React from 'react';
 import { LogoContainer } from './Navbar.styles';
-import LogoIcon from '../../assets/img/logo.svg';
+import LogoIconEn from '../../assets/img/logo-en.svg';
+import LogoIconAr from '../../assets/img/logo-ar.svg';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Logo() {
+  const { i18n } = useTranslation();
+
   return (
     <LogoContainer>
       <NavLink to='/'>
-        <img src={LogoIcon} alt='noon' />
+        {i18n.language === 'en' ? (
+          <img src={LogoIconEn} alt='noon' />
+        ) : (
+          <img src={LogoIconAr} alt='نون' />
+        )}
       </NavLink>
     </LogoContainer>
   );
