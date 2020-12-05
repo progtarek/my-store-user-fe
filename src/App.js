@@ -18,3 +18,5 @@ const mapStateToProps = ({ general }) => ({
   language: general.language,
 });
 export default connect(mapStateToProps)(App);
+
+// TODO replace arrow image with native css

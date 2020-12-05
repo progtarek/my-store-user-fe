@@ -1,4 +1,5 @@
 import React from 'react';
+import CategoriesBar from '../CategoriesBar/CategoriesBar';
 import Navbar from '../Navbar/Navbar';
 import SupportBar from '../SupportBar/SupportBar';
 import { HeaderContainer } from './Header.styles';
@@ -8,6 +9,7 @@ function Header() {
     <HeaderContainer>
       <SupportBar />
       <Navbar />
+      <CategoriesBar />
     </HeaderContainer>
   );
 }
