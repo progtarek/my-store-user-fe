@@ -21,3 +21,13 @@ export const CustomLink = styled.a`
     opacity: 0.6;
   }
 `;
+
+export const H5 = styled.h5`
+  color: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.2px;
+  margin-bottom: 16px;
+`;

@@ -158,18 +158,29 @@ export const CategoriesGroupMenuContainer = styled.div`
   right: 0px;
   background-color: white;
   z-index: 10;
-  padding: 20px 25px 25px;
+  padding-top: 20px;
+  padding-bottom: 25px;
   box-shadow: 0px 5px 5px -4px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &:hover {
+    display: flex;
+  }
 `;
 
 export const CategoriesGroupListContainer = styled.ul`
   padding: 0;
   margin: 0;
 
-  li {
+  .category-item {
     display: inline-block;
 
-    a {
+    .category-link {
       display: flex;
       align-items: center;
       text-transform: uppercase;
